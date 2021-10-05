@@ -24,7 +24,7 @@ const {
 io.on("connection", async(socket) => {
 
   //room,welcome
-  await socket.on('join', ({ name, room }, callback) => {
+  await socket.on('join', async({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if(error) return callback(error);
