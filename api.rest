@@ -1,0 +1,53 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTQwYjRlMGI0MTIyMmNiZTYxNjM4YzMiLCJpYXQiOjE2MzE3MDk1MzN9.V20wRhGv1Xtv4ah04jKFHsKyWpvv6bj8aqn-ArLtk-k
+
+###
+POST http://localhost:7878/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"1519132",
+    "password":"1234"
+}
+###
+POST https://morning-escarpment-37129.herokuapp.com/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"jim",
+    "password":"jim"
+}
+
+###
+GET http://localhost:7878/api/auth
+Authorization: {{token}}
+
+###
+GET  http://localhost:7878/api/posts
+Authorization: {{token}}
+
+###
+POST http://localhost:7878/api/posts
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "title" : "Facebook suck3",
+    "description" : "Content very good3",
+    "url" : "https://suckedbook.com/myhome3",
+    "status" : true
+}
+
+###
+PUT http://localhost:7878/api/posts/614215e2f6d211a504faf02d
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+    "title" : "Facebook suck4",
+    "description" : "Content very good",
+    "url" : "https://suckedbook.com/myhome",
+    "status" : false
+}
+###
+DELETE http://localhost:7878/api/posts/614215e2f6d211a504faf02d
+Authorization: {{token}}
