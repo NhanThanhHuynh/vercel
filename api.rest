@@ -1,4 +1,4 @@
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTQwYjRlMGI0MTIyMmNiZTYxNjM4YzMiLCJpYXQiOjE2MzE3MDk1MzN9.V20wRhGv1Xtv4ah04jKFHsKyWpvv6bj8aqn-ArLtk-k
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTQwYjRlMGI0MTIyMmNiZTYxNjM4YzMiLCJpYXQiOjE2MzQwNDg2NjV9.aPWwCbkhLMHvY2ZQWWv7FWiImtufQqkgxTfpry_4D7E
 
 ###
 POST http://localhost:7878/api/auth/register
@@ -22,11 +22,11 @@ GET http://localhost:7878/api/auth
 Authorization: {{token}}
 
 ###
-GET  http://localhost:7878/api/posts
+GET  https://safe-lake-14293.herokuapp.com/api/posts
 Authorization: {{token}}
 
 ###
-POST http://localhost:7878/api/posts
+POST https://safe-lake-14293.herokuapp.com/api/posts
 Authorization: {{token}}
 Content-Type: application/json
 

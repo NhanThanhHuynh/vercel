@@ -8,8 +8,15 @@ const PostModel = require('../Models/Posts')
 //Access = Private
 //Example routes.get('/',(req,res)=>{})
 async function GetPost(req, res) {
-  const user = await PostModel.find({userId:req.userId}).populate('user',["username","password"])
-  console.log(user);
+  try {
+    const posts = await PostModel.find({ user: req.userId }).populate("user", [
+      "username",
+    ]);
+    res.json({ success: true, posts });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
 }
 
 //Access = private
