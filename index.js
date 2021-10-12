@@ -57,7 +57,7 @@ io.on("connection", async(socket) => {
   })
 });
 
-connectDB();
+
 app.use(express.json());
 app.use(cors());
 app.use(function (req, res, next) {
@@ -67,6 +67,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+connectDB();
 app.use("/api/auth", auth);
 app.use("/api/posts", posts);
 server.listen(PORT, console.log(`Server run on ${PORT}`));
