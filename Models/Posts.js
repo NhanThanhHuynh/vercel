@@ -13,7 +13,8 @@ const PostSchema = new Schema({
         type : String
     },
     status : {
-        type : String
+        type : String,
+        enum: ['TO LEARN', 'LEARNING', 'LEARNED']
     },
     user :{
         type : Schema.Types.ObjectId,
