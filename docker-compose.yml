@@ -1,0 +1,10 @@
+version: '4'
+
+services:
+  my-app-2:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-app-2
+    ports: 
+      - '4040:4040'
